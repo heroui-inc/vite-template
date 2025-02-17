@@ -43,8 +43,12 @@ export const useTheme = (defaultTheme?: Theme) => {
     theme === ThemeProps.dark ? setLightTheme() : setDarkTheme();
 
   useEffect(() => {
+    const storedTheme = localStorage.getItem(ThemeProps.key) as Theme | null;
+
+    const theme = storedTheme || (defaultTheme ?? ThemeProps.light);
+
     _setTheme(theme);
-  });
+  }, [defaultTheme]);
 
   return { theme, isDark, isLight, setLightTheme, setDarkTheme, toggleTheme };
 };
