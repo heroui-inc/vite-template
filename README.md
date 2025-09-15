@@ -2,7 +2,7 @@
 
 This is a template for creating applications using Vite and HeroUI (v2).
 
-[Try it on CodeSandbox](https://githubbox.com/frontio-ai/vite-template)
+[Try it on CodeSandbox](https://githubbox.com/heroui-inc/vite-template)
 
 ## Technologies Used
 
@@ -18,7 +18,7 @@ This is a template for creating applications using Vite and HeroUI (v2).
 To clone the project, run the following command:
 
 ```bash
-git clone https://github.com/frontio-ai/vite-template.git
+git clone https://github.com/heroui-inc/vite-template.git
 ```
 
 ### Install dependencies
@@ -47,4 +47,4 @@ After modifying the `.npmrc` file, you need to run `pnpm install` again to ensur
 
 ## License
 
-Licensed under the [MIT license](https://github.com/frontio-ai/vite-template/blob/main/LICENSE).
+Licensed under the [MIT license](https://github.com/heroui-inc/vite-template/blob/main/LICENSE).
