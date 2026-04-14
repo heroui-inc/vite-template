@@ -1,4 +1,5 @@
-import { FC, useState, useEffect, useCallback } from "react";
+import { FC, useCallback } from "react";
+import { ThemeProps, useTheme } from "@heroui/react";
 
 import { SunFilledIcon, MoonFilledIcon } from "@/components/icons";
 
@@ -7,31 +8,11 @@ export interface ThemeSwitchProps {
 }
 
 export const ThemeSwitch: FC<ThemeSwitchProps> = ({ className }) => {
-  const [isMounted, setIsMounted] = useState(false);
-  const [theme, setTheme] = useState<"light" | "dark">("dark");
-
-  useEffect(() => {
-    const root = document.documentElement;
-    const savedTheme = localStorage.getItem("theme") as
-      | "light"
-      | "dark"
-      | null;
-    const initialTheme = savedTheme || "dark";
-
-    setTheme(initialTheme);
-    root.classList.toggle("dark", initialTheme === "dark");
-    setIsMounted(true);
-  }, []);
+  const { theme, setTheme } = useTheme(ThemeProps.DARK);
 
   const toggleTheme = useCallback(() => {
-    const newTheme = theme === "light" ? "dark" : "light";
-
-    setTheme(newTheme);
-    localStorage.setItem("theme", newTheme);
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  }, [theme]);
-
-  if (!isMounted) return <div className="w-6 h-6" />;
+    setTheme(theme === ThemeProps.LIGHT ? ThemeProps.DARK : ThemeProps.LIGHT);
+  }, [theme, setTheme]);
 
   return (
     <button
