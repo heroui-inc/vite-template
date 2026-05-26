@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@heroui/react": "https://pkg.pr.new/@heroui/react@6561",
-    "@heroui/styles": "https://pkg.pr.new/@heroui/styles@6561",
+    "@heroui/react": "3.1.0",
+    "@heroui/styles": "3.1.0",
     "clsx": "2.1.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
